@@ -82,6 +82,11 @@ class VideoRoomComponent extends Component {
 
     joinSession() {
         this.OV = new OpenVidu();
+        this.OV.setAdvancedConfiguration({
+            iceServers: [{
+                urls: [ "stun:stun.l.google.com:19302" ]
+            }]
+        });
 
         this.setState(
             {
